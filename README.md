@@ -1,2 +1,2 @@
 # aws-server
-go bakend
+go backend
