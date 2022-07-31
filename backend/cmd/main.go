@@ -25,6 +25,7 @@ type ConfigCORS struct {
 func main() {
 	//nacelle.NewBootstrapper("gin-router", setup).BootAndExit()
 
+
 	r := gin.Default()
 	// same as
 	// config := cors.DefaultConfig()
@@ -34,7 +35,7 @@ func main() {
 	r.GET("/user/:name", router.GetUser)
 	r.POST("/user", router.InsertUser)
 	r.GET("/user/", router.GetAllUser)
-	r.RunTLS(":8080", "cmd/a.cert", "cmd/a.key")
+	r.RunTLS(":8080",  os.Getenv("BACKEND_CERT_PATH"), os.Getenv("BACKEND_CERT_KEY"))
 	// cert, err := tls.LoadX509KeyPair("backend/Tajale72.pem", "backend/Tajale72.pem")
 	// if err != nil {
 	// 	log.Fatal(err)
