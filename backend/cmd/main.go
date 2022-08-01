@@ -3,6 +3,7 @@ package main
 import (
 	router "interview/internal/router"
 	"time"
+	"os"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
